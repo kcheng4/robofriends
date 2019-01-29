@@ -1,0 +1,13 @@
+
+@font-face {
+font-family: 'NOVA Regular';
+font-style: normal;
+font-weight: normal;
+src: local('NOVA Regular'), url('NOVABOLD.woff') format('woff');
+}
+
+h1 {
+  font-family: 'NOVA Regular';
+  font-weight: 200;
+  color: white;
+}
