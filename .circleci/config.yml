@@ -15,9 +15,9 @@ jobs:
       - checkout
       - run: echo "A second one"
 
-  workflows:
-    version: 2
-    flows:
-      jobs:
-        - build
-        - build2
+workflows:
+  version: 2
+  flows:
+    jobs:
+      - build
+      - build2
