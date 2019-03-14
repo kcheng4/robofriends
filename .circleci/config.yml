@@ -3,21 +3,32 @@ version: 2
 jobs:
   build:
     docker:
-      - image: circleci/node:8.1.0
+      - image: circleci/node:8.9
     steps:
       - checkout
-      - run: echo "Hello"
+      - run: echo "npm installing"
+      - run: npm install
+      - run: CI=true npm run build
 
-  build2:
+  test:
     docker:
-      - image: circleci/node:8.1.0
+      - image: circleci/node:8.9
     steps:
       - checkout
       - run: echo "A second one"
 
+  yo:
+    docker:
+      - image: circleci/node:8.9
+    steps:
+      - checkout
+      - run: echo "Yeah, what up"
+
 workflows:
   version: 2
-  flows:
+  build_test_and_lint:
     jobs:
       - build
-      - build2
+      - test:
+          requires:
+            - yo
