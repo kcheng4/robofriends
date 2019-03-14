@@ -4,7 +4,7 @@ class SearchBox extends Component {
   render(){
     return (
       <div className='tc pa2'>
-        <input onChange={this.props.searchChange} className='tc pa3 ba b--green bg-lightest-blue' type='search' placeholder='Search Robots'/>
+        <input aria-label='Search Robots' onChange={this.props.searchChange} className='tc pa3 ba b--green bg-lightest-blue' type='search' placeholder='Search Robots'/>
       </div>
 
     );
